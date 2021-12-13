@@ -1,0 +1,77 @@
+Started GET "/" for ::1 at 2021-12-13 15:22:47 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+Filter chain halted as #<Proc:0x000055b06706db88 /home/ale/.rvm/gems/ruby-2.7.0/gems/actionpack-6.1.4.1/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1064)
+
+
+Started GET "/" for ::1 at 2021-12-13 15:22:48 -0300
+Processing by ProjectsController#index as HTML
+Filter chain halted as #<Proc:0x000055b06706db88 /home/ale/.rvm/gems/ruby-2.7.0/gems/actionpack-6.1.4.1/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 192)
+
+
+Started GET "/" for ::1 at 2021-12-13 15:22:55 -0300
+Processing by ProjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering projects/index.html.erb within layouts/application
+  Rendered projects/_project_creation_form.html.erb (Duration: 0.5ms | Allocations: 158)
+  Rendered projects/_search_bar.html.erb (Duration: 0.7ms | Allocations: 118)
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/_dashboard.html.erb:14
+  Rendered projects/_dashboard.html.erb (Duration: 31.5ms | Allocations: 5679)
+  Rendered projects/index.html.erb within layouts/application (Duration: 36.5ms | Allocations: 6761)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 69.4ms | Allocations: 11795)
+Completed 200 OK in 79ms (Views: 73.0ms | ActiveRecord: 1.6ms | Allocations: 13956)
+
+
+Started GET "/projects/create?start_date=2021-12-13&end_date=2021-12-20&status=Propuesta&project_name=sytem+&description=jksdcsdkjcsd" for ::1 at 2021-12-13 15:23:29 -0300
+Processing by ProjectsController#create as HTML
+  Parameters: {"start_date"=>"2021-12-13", "end_date"=>"2021-12-20", "status"=>"Propuesta", "project_name"=>"sytem ", "description"=>"jksdcsdkjcsd"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[36mProject Create (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("project_name", "description", "start_date", "end_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["project_name", "sytem "], ["description", "jksdcsdkjcsd"], ["start_date", "2021-12-13"], ["end_date", "2021-12-20"], ["status", "Propuesta"], ["created_at", "2021-12-13 18:23:29.451687"], ["updated_at", "2021-12-13 18:23:29.451687"]]
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (158.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/create.html.erb within layouts/application
+  Rendered projects/create.html.erb within layouts/application (Duration: 0.8ms | Allocations: 319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3293)
+Completed 200 OK in 179ms (Views: 5.9ms | ActiveRecord: 158.7ms | Allocations: 8507)
+
+
+Started GET "/" for ::1 at 2021-12-13 15:23:31 -0300
+Processing by ProjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering projects/index.html.erb within layouts/application
+  Rendered projects/_project_creation_form.html.erb (Duration: 0.2ms | Allocations: 40)
+  Rendered projects/_search_bar.html.erb (Duration: 0.1ms | Allocations: 39)
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/_dashboard.html.erb:14
+  Rendered projects/_dashboard.html.erb (Duration: 3.0ms | Allocations: 982)
+  Rendered projects/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4809)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.2ms | Allocations: 5236)
+
+
+Started GET "/?status_search=Propuesta" for ::1 at 2021-12-13 15:23:42 -0300
+Processing by ProjectsController#index as HTML
+  Parameters: {"status_search"=>"Propuesta"}
+  Rendering layout layouts/application.html.erb
+  Rendering projects/index.html.erb within layouts/application
+  Rendered projects/_project_creation_form.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered projects/_search_bar.html.erb (Duration: 0.1ms | Allocations: 39)
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (status = 'Propuesta')[0m
+  ↳ app/views/projects/_dashboard.html.erb:14
+  Rendered projects/_dashboard.html.erb (Duration: 2.6ms | Allocations: 814)
+  Rendered projects/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1087)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4055)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 4525)
+
+

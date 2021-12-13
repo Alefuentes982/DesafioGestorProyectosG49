@@ -1,0 +1,39 @@
+<div class="container px-5 pt-2">
+
+    <h1 class="pl-5 pb-3">Creacion de proyecto</h1>
+
+    <form id="create_project" method="get" action="/projects/create" class="px-5">
+
+        <div class="form-row">
+            <div class="form-group col-auto">
+                <input name="start_date" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Fecha de inicio">
+            </div>
+            <div class="form-group col-auto mx-5">
+                <input name="end_date" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Fecha de termino">
+            </div>
+            <div class="form-group col-auto">
+                <select name="status" class="form-control">
+                    <option value = "" disabled selected hidden>Estado</option>
+                    <option value="Propuesta">Propuesta</option>
+                    <option value="En progreso">En Progreso</option>
+                    <option value="Terminado">Terminado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input name="project_name" class="form-control" placeholder="Nombre del proyecto">
+        </div>
+
+        <div class="form-group">
+            <textarea name="description" class="form-control" rows="5" placeholder="Descripcion..."></textarea> 
+        </div>
+    
+        <div class="form-group">
+            <button type="submit" class="btn btn-light">Crear Proyecto</button>
+        </div>
+
+    </form>
+    
+</div>
+
